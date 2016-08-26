@@ -1,0 +1,17 @@
+.logo {
+  margin: 0px auto 30px auto;
+  min-height: 86px;
+  width: 500px;
+  background-size: 500px 86px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("https://cdn2.iconfinder.com/static/bb905a78c7104b48b6e0c9dcb2e30609/assets/img/homepage-logo.png");
+  @include respond-to(xs){
+    padding: 0;
+    margin: 0 auto 18px auto;
+    height: 43px;
+    width: 250px;
+    background-size: 250px 43px;
+    background-image: url("https://cdn2.iconfinder.com/static/bb905a78c7104b48b6e0c9dcb2e30609/assets/img/homepage-logo.png");
+  }
+}

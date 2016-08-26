@@ -1,0 +1,51 @@
+.search-list{
+  list-style-type: none;
+  width: 702px;
+  margin: auto;
+  @include respond-to(sm){
+     width: 400px;
+  }
+  @include respond-to(xs){
+     width: 300px;
+  }
+  li{
+    padding: 10px 10px 10px 0;
+    overflow: auto;
+    h4{
+      font: bold 20px/1.5 $font-stack;
+      margin: 0 15px 0 0;
+    }
+    div{
+      width: 345px;
+      display: inline-block;
+      padding: 10px 10px 10px 0;
+
+      @include respond-to(xs){
+        width: 300px;
+      }
+      @include respond-to(sm){
+        width: 350px;
+      }
+      min-height: 98px;
+      float: left;
+      img{
+         display: inline-block;
+         padding: 10px 10px 10px 0;
+          @include respond-to(xs){
+          width: 290px;
+        }
+        @include respond-to(sm){
+          width: 350px;
+        }
+      }
+    }
+
+    p{
+      font: 200 12px/1.5 Georgia, Times New Roman, serif;
+    }
+  }
+  & li:hover {
+    background: $light-gray-color;
+    cursor: pointer;
+  }
+}

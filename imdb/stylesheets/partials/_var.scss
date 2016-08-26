@@ -1,0 +1,7 @@
+$font-stack:    Helvetica, sans-serif;
+$breakpoints: (
+        xs: "(max-width : 480px)",
+        sm: "(max-width : 810px) and (min-width: 481px)",
+        md: "(max-width : 1024px) and (min-width: 769px)",
+        lg: "(min-width : 1025px)"
+)

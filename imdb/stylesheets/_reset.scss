@@ -1,0 +1,38 @@
+html, body, object, iframe,
+h1, h2, h3, h4, h5, h6, p, img
+dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+footer, header, menu, nav, section, summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body { line-height: 1;
+}
+
+footer,header,menu,nav,section {
+  display: block;
+}
+
+button {
+  vertical-align: middle;
+  font-size: 1rem;
+}
+
+input {
+  vertical-align: middle;
+}
+
+html { box-sizing: border-box; }
+
+*, *:before, *:after {
+  outline: none;
+  box-sizing: inherit;
+  //display: block;
+}

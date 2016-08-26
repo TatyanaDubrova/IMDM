@@ -1,0 +1,1 @@
+{"version":3,"sources":["alert.js"],"names":[],"mappings":";;;;;;IACM,KAFN;AAGC,mBAAa;AAAA;AAAE;;;;yBACV,IAJN,EAIW;AACN,aAAO,MAAM,WAAW,IAAX,GAAkB,GAAxB,CAAP;AACH;;;;;;AAEF,OAAO,OAAP,GAAiB,KAAjB","file":"alert-compiled.js","sourcesContent":["\r\nclass Alert{\r\n constructor(){};\r\n show(what){\r\n     return alert('Hello ' + what + '!');\r\n }\r\n}\r\nmodule.exports = Alert;"]}

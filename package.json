@@ -1,0 +1,51 @@
+{
+  "name": "study-es6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start",
+    "dev": "webpack-dev-server --progress --colors --config"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "author": "Dubrova Tatyana",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-plugin-check-es2015-constants": "^6.8.0",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.8.0",
+    "babel-plugin-transform-es2015-block-scoping": "^6.10.1",
+    "chai": "^3.5.0",
+    "karma": "^1.2.0",
+    "karma-chai": "^0.1.0",
+    "karma-chai-plugins": "^0.7.0",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-cli": "^1.0.1",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-ie-launcher": "^1.0.0",
+    "karma-mocha": "^1.1.1",
+    "karma-opera-launcher": "^1.0.0",
+    "karma-phantomjs-launcher": "^1.0.1",
+    "karma-safari-launcher": "^1.0.0",
+    "mocha": "^3.0.2",
+    "mocha-jsdom": "^1.1.0",
+    "sinon": "^1.17.5"
+  },
+  "dependencies": {
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.5",
+    "core-js": "^2.4.1",
+    "css-loader": "^0.23.1",
+    "karma-mocha": "^1.1.1",
+    "karma-mocha-debug": "^0.1.2",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^1.8.0",
+    "node-sass": "^3.8.0",
+    "sass-loader": "^4.0.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}

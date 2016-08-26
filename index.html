@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World Basic App</title>
+    <link rel="stylesheet" href="dist/styles.css">
+</head>
+<body>
+<div class="navbar">
+<div class="navbar-container">
+    <div class="nav">
+        <button id="home-button" class="home-button">Home</button>
+    </div>
+</div>
+</div>
+<div id = "search" class="search">
+    <div class ="container">
+        <section id="search-section">
+            <div class="logo"></div>
+            <div>
+                <div>
+                    <form id="search-form" class="search-form" name="search-form">
+                        <input autofocus id="query" class="query" type="text" title="Search" placeholder="Search for movies"/>
+                        <input id="search-submit" class="input-submit-search" type="submit" value=""/>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="container" id="search-results">
+        <ul class="search-list"></ul>
+
+    </div>
+</div>
+<script src="http://localhost:8080/webpack-dev-server.js"></script>
+<script type="text/javascript" src="dist/bundle.js"></script>
+</body>
+</html>
