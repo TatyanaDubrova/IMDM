@@ -32,11 +32,11 @@ module.exports = {
             test: /\.js$/,
             exclude: /(node_modules)/,
             loader: 'babel-loader',
-            presets: ["es2015"]
-            /*query: {
+            presets: ["es2015"],
+            query: {
                 optional: 'runtime',
-                nonStandard: 'false',
-            },*/
+                nonStandard: 'false'
+            }
         }, {
             test: /\.scss$/,
             loader: ExtractTextPlugin.extract('css-loader?sourceMap!sass-loader?sourceMap=true&sourceMapContents=true')

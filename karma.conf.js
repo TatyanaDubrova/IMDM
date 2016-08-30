@@ -36,7 +36,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-     'imdb/scripts/specs/app.spec.js' : [ 'webpack', 'sourcemap' ]
+      'imdb/scripts/specs/app.spec.js': [ 'webpack', 'sourcemap' ]
     },
 
 
@@ -75,10 +75,10 @@ module.exports = function(config) {
     webpack: {
       context: path.join(__dirname, 'imdb'),
       resolve: {
-        modulesDirectories: ["node_modules", "scripts", "scripts/specs"],
+        modulesDirectories: ["node_modules", "scripts", "scripts/specs", "scripts/core"],
         extensions: ["", ".js"],
       },
-      entry: ['./scripts/specs/app.spec.js'],
+      entry: './scripts/specs/app.spec.js',
       devtool: "#inline-source-map",
       module: {
         loaders: [
@@ -89,11 +89,10 @@ module.exports = function(config) {
               /translations\.js$/,
             ],
             loader: 'babel-loader',
-            presets: ["es2015"]
-           /*query: {
-              optional: 'runtime',
-              nonStandard: 'false',
-            },*/
+            /* query: {
+             optional: 'runtime',
+             nonStandard: 'false',
+             },*/
           },
         ],
       }

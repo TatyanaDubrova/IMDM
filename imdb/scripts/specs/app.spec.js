@@ -2,16 +2,15 @@
  * Created by tatsiana.dubrova on 17.08.2016.
  */
 'use strict';
-//import Router from "Router";
+import Router from "Router";
 let assert = chai.assert;
 
 describe('Tests General Configuration', () => {
     it('should not be null', () => {
         assert.isNotNull("Basic Test")
     })
-})
+});
 
-/*
 describe('Router', () => {
     describe('#constructor', () => {
         let router;
@@ -33,4 +32,4 @@ describe('Router', () => {
         });
 
     })
-});*/
+});
