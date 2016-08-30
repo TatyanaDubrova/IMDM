@@ -6,40 +6,39 @@
      width: 400px;
   }
   @include respond-to(xs){
-     width: 300px;
+     width: 350px;
   }
   li{
-    padding: 10px 10px 10px 0;
+    padding: 10px;
     overflow: auto;
     h4{
       font: bold 20px/1.5 $font-stack;
       margin: 0 15px 0 0;
     }
     div{
-      width: 345px;
+      width: 350px;
       display: inline-block;
-      padding: 10px 10px 10px 0;
-
+      padding: 10px;
+      float: left;
+      min-height: 98px;
       @include respond-to(xs){
         width: 300px;
+        float: none;
       }
       @include respond-to(sm){
         width: 350px;
+        float: none;
       }
-      min-height: 98px;
-      float: left;
       img{
-         display: inline-block;
-         padding: 10px 10px 10px 0;
-          @include respond-to(xs){
-          width: 290px;
-        }
+        display: inline-block;
+        @include respond-to(xs){
+          max-width: 280px;
+          }
         @include respond-to(sm){
-          width: 350px;
+          max-width: 350px;
         }
       }
     }
-
     p{
       font: 200 12px/1.5 Georgia, Times New Roman, serif;
     }

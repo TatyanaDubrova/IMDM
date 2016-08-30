@@ -3,13 +3,14 @@
  */
 'use strict';
 //import Router from "Router";
-let assert = chai.assert;
 
-describe('Tests General Configuration', () => {
-    it('should not be null', () => {
-        assert.isNotNull("Basic Test")
-    })
-})
+var assert = chai.assert;
+
+describe('Tests General Configuration', function () {
+    it('should not be null', function () {
+        assert.isNotNull("Basic Test");
+    });
+});
 
 /*
 describe('Router', () => {
@@ -34,3 +35,5 @@ describe('Router', () => {
 
     })
 });*/
+
+//# sourceMappingURL=app.spec-compiled.js.map

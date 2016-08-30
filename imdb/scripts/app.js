@@ -5,53 +5,45 @@
 import Router from "./core/router";
 
 // adding routes
-Router
-    .add(/movies/, function() {
-        //alert('list of movies');
-        document.getElementById('search-section').style.display = 'none';
-        document.getElementById('home-button').style.visibility='visible';
-        document.getElementById('search-results').style.display = '';
-    })
-    .add(function() {
-        //alert('default');
-        document.getElementById('home-button').style.visibility='hidden';
-        document.getElementById('search-section').style.display = '';
-        document.getElementById('search-results').style.display = 'none';
-    }).listen();
-
+let appRouter = new Router();
+appRouter
+    .add(/movies/, renderMoviesPage)
+    .add(renderHomePage)
+    .listen();
 
 document.addEventListener("DOMContentLoaded", ready);
-document.getElementById("home-button").addEventListener("click", getHome);
+document.getElementById("home-button").addEventListener("click", appRouter.navigate);
+document.querySelector("#search-form").addEventListener("submit", function(event){
+    clear();
+    let searchQuery = document.getElementById('query').value;
+    event.preventDefault();
+    getJSON('http://www.omdbapi.com/?s=' + searchQuery + '&r=json').then(function(data){
+        if (!data.Response || data.Error){
+            alert(data.Error + ' Try once more!');
+        }
+        else if (data.totalResults > 10) {
+            alert("totalResults: " + data.totalResults);
+            appRouter.navigate("/movies");
+            let pageCount = Math.ceil(data.totalResults/10);
+            for (let i=1; i<=pageCount; i++){
+                getJSON('http://www.omdbapi.com/?s=' + searchQuery + '&page=' + i + '&r=json').then(function(data){
+                    showResults(data.Search);
+                }, function(status){
+                    alert('Something went wrong :(');
+                });
+            }
+        } else {
+            appRouter.navigate("/movies");
+            showResults(data.Search);
+        }
+    }, function(status){
+        alert('Something went wrong :(');
+    });
+});
 
 function ready () {
-    Router.navigate();
-    document.querySelector("#search-form").addEventListener("submit", function(event){
-        clear();
-        let searchQuery = document.getElementById('query').value;
-        event.preventDefault();
-       // console.log(searchQuery);
-        Router.navigate("/movies");
-        getJSON('http://www.omdbapi.com/?s=' + searchQuery + '&r=json').then(function(data){
-           if (!data.Response || data.Error){
-               alert(data.Error);
-               getHome();
-           }
-            else if (data.totalResults > 10) {
-                 let pageCount = Math.ceil(data.totalResults/10);
-                 for (let i=1; i<=pageCount; i++){
-                    getJSON('http://www.omdbapi.com/?s=' + searchQuery + '&page=' + i + '&r=json').then(function(data){
-                        showResults(data.Search);
-                    }, function(status){
-                        alert('Something went wrong!');
-                    });
-                }
-            } else {
-               showResults(data.Search);
-           }
-        }, function(status){
-            alert('Something went wrong!');
-        });
-    });
+    //initial route
+    appRouter.navigate();
 };
 
 function getJSON (url) {
@@ -99,18 +91,23 @@ function showResults(results){
         nodeLi.appendChild(nodeYear);
         nodeLi.appendChild(nodeType);
         block.appendChild(nodeLi);
-
     });
+}
 
+function renderMoviesPage(){
+    document.getElementById('search-section').style.display = 'none';
+    document.getElementById('home-button').style.visibility='visible';
+    document.getElementById('search-results').style.display = '';
+}
+
+function renderHomePage() {
+    document.getElementById('home-button').style.visibility='hidden';
+    document.getElementById('search-section').style.display = '';
+    document.getElementById('search-results').style.display = 'none';
+    document.getElementById("query").value="";
 }
 
 function clear(){
     let block = document.querySelector("#search-results ul");
     block.innerHTML = "";
-
-}
-
-function getHome(){
-    document.getElementById("query").value="";
-    Router.navigate();
 }

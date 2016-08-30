@@ -60,13 +60,18 @@ module.exports = function (config) {
         modulesDirectories: ["node_modules", "scripts", "scripts/specs"],
         extensions: ["", ".js"]
       },
-      entry: './scripts/specs/app.spec.js',
+      entry: ['./scripts/specs/app.spec.js'],
       devtool: "#inline-source-map",
       module: {
         loaders: [{
           test: /\.js$/,
           exclude: [/node_modules/, /translations\.js$/],
-          loader: 'babel-loader'
+          loader: 'babel-loader',
+          presets: ["es2015"]
+          /*query: {
+             optional: 'runtime',
+             nonStandard: 'false',
+           },*/
         }]
       }
     },
